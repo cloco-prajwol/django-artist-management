@@ -1,0 +1,22 @@
+meta {
+  name: artist create
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://127.0.0.1:8000/api/artist/create/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "A13",
+    "first_release_year": 2020,
+    "no_of_album_release": 3,
+    "dob": "2021-03-23",
+    "gender": "Male",
+    "address": "ktm"
+  }
+}

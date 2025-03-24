@@ -1,0 +1,22 @@
+meta {
+  name: artist update
+  type: http
+  seq: 6
+}
+
+put {
+  url: http://127.0.0.1:8000/api/artist/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "prajwoll",
+    "first_release_year": 2021,
+    "no_of_album_release": 3,
+    "dob": "2021-03-23",
+    "gender": "Male",
+    "address": "ktm"
+  }
+}
