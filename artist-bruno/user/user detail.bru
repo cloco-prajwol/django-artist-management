@@ -1,0 +1,25 @@
+meta {
+  name: user detail
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://127.0.0.1:8000/api/user/2/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "username" : "user3",
+  "last_name" : "shakya",
+  "email" : "prajwol3@gmail.com",
+  "first_name" : "prajwol",
+  "phone" : "293492373",
+  "dob" : "2025-01-01",
+  "gender" : "M",
+  "address" : "safsaf",
+  "password" : "sihfbsa"
+  }
+}

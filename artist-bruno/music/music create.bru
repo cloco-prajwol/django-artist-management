@@ -1,0 +1,20 @@
+meta {
+  name: music create
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://127.0.0.1:8000/api/music/create/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title":"m2",
+    "album_name":"m2",
+    "artist":1,
+    "genre":"rmb"
+  }
+}

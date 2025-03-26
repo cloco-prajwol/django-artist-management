@@ -1,0 +1,20 @@
+meta {
+  name: music edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://127.0.0.1:8000/api/music/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "m1",
+    "album_name": "m1",
+    "artist": 1,
+    "genre": "rmb"
+  }
+}

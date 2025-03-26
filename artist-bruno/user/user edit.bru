@@ -1,0 +1,24 @@
+meta {
+  name: user edit
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://127.0.0.1:8000/api/user/1/update/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "prajwol",
+    "last_name": "fsf",
+    "email": "shakya.prajwol@cloco.net",
+    "first_name": "asfs",
+    "phone": "293492373",
+    "dob": "2025-01-01",
+    "gender": "M",
+    "address": "sdsaf"
+  }
+}

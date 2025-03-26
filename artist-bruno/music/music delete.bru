@@ -1,0 +1,21 @@
+meta {
+  name: music delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://127.0.0.1:8000/api/music/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 1,
+    "title": "t1",
+    "album_name": "t1",
+    "artist": 2,
+    "genre": "rmb"
+  }
+}

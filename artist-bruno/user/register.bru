@@ -1,0 +1,25 @@
+meta {
+  name: register
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://127.0.0.1:8000/api/user/register/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "username" : "user4",
+  "last_name" : "shakya",
+  "email" : "prajwol4@gmail.com",
+  "first_name" : "prajwol",
+  "phone" : "293492373",
+  "dob" : "2025-01-01",
+  "gender" : "M",
+  "address" : "safsaf",
+  "password" : "password"
+  }
+}

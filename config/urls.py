@@ -20,10 +20,16 @@ from rest_framework_simplejwt.views import (
 )
 from django.contrib import admin
 from django.urls import path
-from api.views.artist.create import ArtistCreateView
-from api.views.artist.list import ArtistListView
-from api.views.artist.retriveUpdateDestroy import ArtistDetailView
-from api.views.artist.retriveWithMusic import ArtistDetailWithMusicListView
+from api.views.artist.artistCreateView import ArtistCreateView
+from api.views.artist.artistListView import ArtistListView
+from api.views.artist.artistRetrieveUpdateDestroyView import ArtistRetrieveUpdateDestroyView
+from api.views.artist.retriveWithMusicView import ArtistDetailWithMusicListView
+from api.views.music.musicCreateView import MusicCreateView
+from api.views.music.musicRetrieveUpdateDestroyView import MusicRetrieveUpdateDestroyView
+from api.views.users.userCreateView import UserCreateView
+from api.views.users.userListView import UserListView
+from api.views.users.userDetailView import UserDetailView
+from api.views.users.userUpdateView import UserUpdateView
 
 
 urlpatterns = [
@@ -32,10 +38,14 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/artist/create/', ArtistCreateView.as_view(), name='artist_create'),
     path('api/artist/list/', ArtistListView.as_view(), name='artist_list'),
-    path('api/artist/<int:pk>', ArtistDetailView.as_view(), name='artist_detail'),
+    path('api/artist/<int:pk>', ArtistRetrieveUpdateDestroyView.as_view(), name='artist_detail'),
     path('api/artist/<int:pk>/detail', ArtistDetailWithMusicListView.as_view(), name='artist_with_music_detail'),
-
-
+    path('api/music/create/', MusicCreateView.as_view(), name='music_create'),
+    path('api/music/<int:pk>', MusicRetrieveUpdateDestroyView.as_view(), name='music_detail'),
+    path('api/user/register/', UserCreateView.as_view(), name='user_create'),
+    path('api/user/list/', UserListView.as_view(), name='user_list'),
+    path('api/user/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
+    path('api/user/<int:pk>/update/', UserUpdateView.as_view(), name='user_update'),
 
 
 ]

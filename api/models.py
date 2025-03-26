@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 class Gender(models.TextChoices):
     male = 'Male'
@@ -15,15 +15,14 @@ class Genre(models.TextChoices):
     rock = "rock"
     jazz = "jazz"
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+class User(AbstractUser):
     phone = models.CharField(max_length=20, blank=True, null=True)
     dob = models.DateField(null=True)
     gender = models.CharField(max_length=10,choices=Gender.choices,null=True)
     address = models.CharField(max_length=100, null=True)
     usertype = models.CharField(max_length=10,choices=UserType.choices, default=UserType.user)
-    class Meta:
-        db_table = ''
+    def __str__(self):
+        return self.username
 
 class Artist(models.Model):
     name = models.CharField(max_length=100)

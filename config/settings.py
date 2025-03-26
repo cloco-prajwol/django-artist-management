@@ -127,6 +127,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-    'DEFAULT_PAGINATION_CLASS': 'api.core.pagination.StandardResultsSetPagination',
+    'DEFAULT_PAGINATION_CLASS': 'api.core.pagination.Pagination',
     'PAGE_SIZE': 10
 }
+AUTH_USER_MODEL = 'api.User'
